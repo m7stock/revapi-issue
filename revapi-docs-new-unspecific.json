@@ -1,0 +1,9 @@
+[
+  {
+    "extension": "revapi.ignore",
+    "configuration": {
+      "code": "java.class.nonPublicPartOfAPI",
+      "justification": "as in documentation: JSON Configuration Format"
+    }
+  }
+]

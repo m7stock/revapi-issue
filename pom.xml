@@ -16,6 +16,9 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+
+		<revapi-java.version>0.20.2</revapi-java.version>
+		<revapi-maven-plugin.version>0.11.4</revapi-maven-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -38,6 +41,47 @@
 	</dependencies>
 
 	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.revapi</groupId>
+					<artifactId>revapi-maven-plugin</artifactId>
+					<version>${revapi-maven-plugin.version}</version>
+					<dependencies>
+						<dependency>
+							<groupId>org.revapi</groupId>
+							<artifactId>revapi-java</artifactId>
+							<version>${revapi-java.version}</version>
+						</dependency>
+					</dependencies>
+					<configuration>
+						<analysisConfigurationFiles>
+							<!-- every json file is found but does not work -->
+							<!--<path>revapi-naive.json</path>-->
+							<path>revapi-docs-new.json</path>
+							<!--<path>revapi-docs-new-unspecific.json</path>-->
+						</analysisConfigurationFiles>
+					<!-- analysisConfiguration works with XML -->
+					<!--
+						<analysisConfiguration>
+							<revapi.ignore>
+								<item>
+									<code>java.class.nonPublicPartOfAPI</code>
+								</item>
+							</revapi.ignore>
+						</analysisConfiguration>
+					-->
+					</configuration>
+					<executions>
+						<execution>
+							<goals>
+								<goal>check</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

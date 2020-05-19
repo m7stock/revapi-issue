@@ -1,0 +1,11 @@
+[
+  {
+    "extension": "revapi.ignore",
+    "configuration": {
+      "code": "java.class.nonPublicPartOfAPI",
+      "old": "class org.springframework.boot.loader.jar.JarEntry (archive = MavenArchive[gav=com.example:demo:jar:0.0.1, file=C:\\Users\\matthias.stock\\.m2\\repository\\com\\example\\demo\\0.0.1\\demo-0.0.1.jar], in api = true, through use = true)",
+      "new": "class org.springframework.boot.loader.jar.JarEntry (archive = MavenArchive[gav=com.example:demo:jar:0.0.2-SNAPSHOT, file=C:\\dev\\git2\\revapi-issue\\target\\demo-0.0.2-SNAPSHOT.jar], in api = true, through use = true)",
+      "justification": "as in documentation: JSON Configuration Format"
+    }
+  }
+]
